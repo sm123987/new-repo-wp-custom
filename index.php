@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div id="main">
-	<?php if(have_posts()) : $i = 1; ?>
+	<?php if(have_posts()) : ?>
 			<?php 
 				global $is_apache; 
 				if ($is_apache ) { 
@@ -10,7 +10,7 @@
 					echo "unknown web server";
 				}
 			?>
-		<?php while(have_posts()) : echo wpautop("inside while. count = $i"); the_post(); ?>
+		<?php while(have_posts()) : the_post(); ?>
 			<div class="post">
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h2>
 				
