@@ -2,14 +2,6 @@
 
 <div id="main">
 	<?php if(have_posts()) : ?>
-			<?php 
-				global $is_apache; 
-				if ($is_apache ) { 
-					echo "web server is running Apache ";
-				}else {
-					echo "unknown web server";
-				}
-			?>
 		<?php while(have_posts()) : the_post(); ?>
 			<div class="post">
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h2>
